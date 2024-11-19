@@ -1,0 +1,14 @@
+file_format: "1"
+id: sweeppp
+name: Sweep++
+type: shield
+url: https://github.com/BrittanyLouviere/SweepPlusPlus
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - studio
+siblings:
+  - sweeppp_left
+  - sweeppp_right
