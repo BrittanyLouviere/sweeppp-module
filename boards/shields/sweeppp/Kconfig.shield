@@ -1,0 +1,5 @@
+config SHIELD_SWEEPPP_LEFT
+    def_bool $(shields_list_contains,sweeppp_left)
+
+config SHIELD_SWEEPPP_RIGHT
+    def_bool $(shields_list_contains,sweeppp_right)
