@@ -52,16 +52,16 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                         ╭──────────┬─────────────┬───────────────┬───────────┬──────────╮
         //│          │ HOME     │          │ END      │          │                         │ INS      │ /           │ *             │ .         │ CALC     │
-                       &kp HOME              &kp END                                         &kp INS    &kp KP_SLASH  &kp KP_MULTIPLY &kp KP_DOT &kp K_CALC
+            &none      &kp HOME   &none      &kp END    &none                                &kp INS    &kp KP_SLASH  &kp KP_MULTIPLY &kp KP_DOT &kp K_CALC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                         ├──────────┼─────────────┼───────────────┼───────────┼──────────┤
         //│          │ PGUP     │ ^        │ PGDN     │          │                         │ 7 &      │ 8 *         │ 9 (           │ 0 )       │ PRTSC    │
-                       &kp PG_UP  &kp UP     &kp PG_DN                                       &kp N7     &kp N8        &kp N9          &kp N0      &kp PSCRN
+            &none      &kp PG_UP  &kp UP     &kp PG_DN  &none                                &kp N7     &kp N8        &kp N9          &kp N0      &kp PSCRN
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮   ╭──────────┼──────────┼─────────────┼───────────────┼───────────┼──────────┤
         //│          │ <        │ v        │ >        │          │ ALT      │   │ FUN      │ 4 $      │ 5 %         │ 6 ^           │ -         │          │
-                       &kp LEFT   &kp DOWN   &kp RIGHT             &to 1          &to 2      &kp N4     &kp N5        &kp N6          &kp KP_MINUS
+            &none      &kp LEFT   &kp DOWN   &kp RIGHT  &none      &to 1          &to 2      &kp N4     &kp N5        &kp N6          &kp KP_MINUS &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼─────────────┼───────────────┼───────────┼──────────┤
         //│          │          │          │          │          │ DEF      │   │ NUM      │ 1 !      │ 2 @         │ 3 #           │ +         │          │
-                                                                   &to 0          &to 3      &kp N1     &kp N2        &kp N3          &kp KP_PLUS
+            &none      &none      &none      &none      &none      &to 0          &to 3      &kp N1     &kp N2        &kp N3          &kp KP_PLUS &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼─────────────┼──────────┬────────────────┴──────────╯
         //                      │ CTR      │ SHIFT    │ SPACE    │ ENTER    │   │ DEL      │ BACKSPACE│ SUPER       │ ALT      │
                                   &kp LCTRL  &kp LSHFT  &kp SPACE  &kp ENTER      &kp DEL    &kp BSPC   &kp LGUI      &kp LALT 
@@ -73,16 +73,16 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                         ╭───────────┬───────────┬───────────┬──────────┬──────────╮
         //│          │          │ F10      │ F11      │ F12      │                         │           │           │           │          │          │
-                                  &kp F10    &kp F11    &kp F12
+            &none      &none      &kp F10    &kp F11    &kp F12                              &none       &none       &none       &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                         ├───────────┼───────────┼───────────┼──────────┼──────────┤
-        //│          │          │ F7       │ F8       │ F9       │                         │           │           │           │ CLR      │ RST      
-                                  &kp F7     &kp F8     &kp F9                                                                   &bt BT_CLR &sys_reset
+        //│          │          │ F7       │ F8       │ F9       │                         │           │           │           │ CLR      │ RST      │
+            &none      &none      &kp F7     &kp F8     &kp F9                               &none       &none       &none       &bt BT_CLR &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────╮   ╭──────────┼───────────┼───────────┼───────────┼──────────┼──────────┤
-        //│          │          │ F4       │ F5       │ F6       │ ALT      │   │ FUN      │ BT 3      │ BT 4      │           │          │ BOOT     
-                                  &kp F4     &kp F5     &kp F6     &to 1          &to 2    &bt BT_SEL 3 &bt BT_SEL 4                        &bootloader
+        //│          │          │ F4       │ F5       │ F6       │ ALT      │   │ FUN      │ BT 3      │ BT 4      │           │          │ BOOT     │
+            &none      &none      &kp F4     &kp F5     &kp F6     &to 1          &to 2    &bt BT_SEL 3 &bt BT_SEL 4 &none       &none      &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼───────────┼───────────┼───────────┼──────────┼──────────┤
-        //│          │          │ F1       │ F2       │ F3       │ DEF      │   │ NUM      │ BT 0      │ BT 1      │ BT 2      │          │          
-                                  &kp F1     &kp F2     &kp F3     &to 0          &to 3    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2                
+        //│          │          │ F1       │ F2       │ F3       │ DEF      │   │ NUM      │ BT 0      │ BT 1      │ BT 2      │          │          │
+            &none      &none      &kp F1     &kp F2     &kp F3     &to 0          &to 3    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none     &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼───────────┼───────────┼───────────┼──────────┴──────────╯
         //                      │ CTR      │ SHIFT    │ SPACE    │ ENTER    │   │ DEL      │ BACKSPACE │ SUPER     │ ALT       │
                                   &kp LCTRL  &kp LSHFT  &kp SPACE  &kp ENTER      &kp DEL    &kp BSPC    &kp LGUI    &kp LALT 
