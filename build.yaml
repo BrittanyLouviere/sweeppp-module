@@ -20,7 +20,8 @@
 
 board: [ "nice_nano_v2" ]
 shield: 
-  - cradio_left
-  - cradio_right
+  # - cradio_left
+  # - cradio_right
   - sweeppp_left
   - sweeppp_right
+  - settings_reset
