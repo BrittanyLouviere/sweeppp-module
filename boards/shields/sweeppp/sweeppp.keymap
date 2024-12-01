@@ -51,8 +51,8 @@
         num_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮                         ╭──────────┬─────────────┬───────────────┬───────────┬──────────╮
-        //│          │ HOME     │          │ END      │          │                         │ INS      │ /           │ *             │ .         │ CALC     │
-            &none      &kp HOME   &none      &kp END    &none                                &kp INS    &kp KP_SLASH  &kp KP_MULTIPLY &kp KP_DOT &kp K_CALC
+        //│ ESC      │ HOME     │ TAB      │ END      │          │                         │ INS      │ /           │ *             │ . >       │ CALC     │
+            &kp ESC    &kp HOME   &kp TAB    &kp END    &none                                &kp INS    &kp KP_SLASH  &kp KP_MULTIPLY &kp DOT     &kp K_CALC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤                         ├──────────┼─────────────┼───────────────┼───────────┼──────────┤
         //│          │ PGUP     │ ^        │ PGDN     │          │                         │ 7 &      │ 8 *         │ 9 (           │ 0 )       │ PRTSC    │
             &none      &kp PG_UP  &kp UP     &kp PG_DN  &none                                &kp N7     &kp N8        &kp N9          &kp N0      &kp PSCRN
