@@ -39,8 +39,8 @@
         //│ A        │ S        │ D        │ F        │ G        │ ALT      │   │ NUM      │ H        │ J        │ K        │ L        │ ; :      │
             &kp A      &kp S      &kp D      &kp F      &kp G      &to 1          &to 2      &kp H      &kp J      &kp K      &kp L      &kp SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Z        │ X        │ C        │ V        │ B        │ DEF      │   │ FUN      │ N        │ M        │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B      &to 0          &to 3      &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH 
+        //│ Z        │ X        │ C        │ V        │ B        │ DEF      │   │ FUN      │ N        │ M        │ . >      │ , <      │ / ?      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B      &to 0          &to 3      &kp N      &kp M      &kp DOT    &kp COMMA  &kp FSLH 
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER    │ SPACE    │ ALT      │
                                   &kp LCTRL  &kp BSPC   &kp LSHFT  &kp DEL        &kp LGUI   &kp ENTER  &kp SPACE  &kp LALT  
