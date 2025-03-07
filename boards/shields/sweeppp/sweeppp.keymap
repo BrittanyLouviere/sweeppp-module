@@ -20,10 +20,10 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ ;: (Shft)     │ Q (Ctrl)  │ J (Win)  │ K (Alt)  │ X        │ DEF      │   │ FUN      │ B        │ M (Alt)  │ W (Win)  │ V (Ctrl) │ Z (Shft)   │
             &mt LSHFT SEMI &mt LCTRL Q &mt LGUI J &mt LALT K &kp X      &to 0          &to 3      &kp B      &mt RALT M &mt RGUI W &mt RCTRL V &mt RSHFT Z
-        //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER    │ SPACE    │ ALT      │
+        //╰───────────────┴───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴────────────╯
+        //                            │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE    │ ENTER    │
                                         &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE  &kp ENTER 
-        //                      ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────╯
+        //                            ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────╯
             >;
         };
 
@@ -41,10 +41,10 @@
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ Z (Shft)   │ X (Ctrl)  │ C (Win)  │ V (Alt)  │ B        │ DEF      │   │ FUN      │ N        │ M (Alt)  │ ,< (Win)     │ .> (Ctrl)   │ /? (Shft)    │
             &mt LSHFT Z &mt LCTRL X &mt LGUI C &mt LALT V  &kp B      &to 0          &to 3      &kp N     &mt RALT M &mt RGUI COMMA &mt RCTRL DOT &mt RSHFT FSLH 
-        //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
-        //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER    │ SPACE    │ ALT      │
+        //╰────────────┴───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────────┼─────────────┴──────────────╯
+        //                         │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE    │ ENTER        │
                                      &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE  &kp ENTER 
-        //                      ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────╯
+        //                         ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────────╯
             >;
         };
 
@@ -63,7 +63,7 @@
         //│          │ CUT      │ COPY     │ PASTE    │          │ DEF      │   │ FUN      │ CALC      │ 0 )      │ . >      │ , <      │ +              │
             &none      &kp LC(X)  &kp LC(C)  &kp LC(V)  &none      &to 0          &to 3      &kp K_CALC  &kp N0     &kp DOT    &kp COMMA  &kp KP_PLUS     
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼───────────┼──────────┼──────────┬──────────┴────────────────╯
-        //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER     │ SPACE    │ ALT      │
+        //                      │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE │ SPACE    │ ENTER    │
                                   &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC    &kp SPACE  &kp ENTER 
         //                      ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴───────────┴──────────┴──────────╯
             >;
@@ -84,7 +84,7 @@
         //│          │          │ F1       │ F2       │ F3       │ DEF      │   │ FUN      │ BT 0      │ BT 1      │ BT 2      │          │          │
             &none      &none      &kp F1     &kp F2     &kp F3     &to 0          &to 3    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none     &none
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼───────────┼───────────┼───────────┼──────────┴──────────╯
-        //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER     │ SPACE     │ ALT       │
+        //                      │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE │ SPACE     │ ENTER     │
                                   &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC    &kp SPACE   &kp ENTER 
         //                      ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴───────────┴───────────┴───────────╯
             >;
