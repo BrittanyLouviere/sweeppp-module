@@ -18,8 +18,8 @@
         //│ A        │ O        │ E        │ U        │ I        │ ALT      │   │ NUM      │ D        │ H        │ T        │ N        │ S        │
             &kp A      &kp O      &kp E      &kp U      &kp I      &to 1          &to 2      &kp D      &kp H      &kp T      &kp N      &kp S
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ; :      │ Q        │ J        │ K        │ X        │ DEF      │   │ FUN      │ B        │ M        │ W        │ V        │ Z        │
-            &kp SEMI   &kp Q      &kp J      &kp K      &kp X      &to 0          &to 3      &kp B      &kp M      &kp W      &kp V      &kp Z
+        //│ ;: (Shft)     │ Q (Ctrl)  │ J (Win)  │ K (Alt)  │ X        │ DEF      │   │ FUN      │ B        │ M (Alt)  │ W (Win)  │ V (Ctrl) │ Z (Shft)   │
+            &mt LSHFT SEMI &mt LCTRL Q &mt LGUI J &mt LALT K &kp X      &to 0          &to 3      &kp B      &mt RALT M &mt RGUI W &mt RCTRL V &mt RSHFT Z
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER    │ SPACE    │ ALT      │
                                   &kp LCTRL  &kp BSPC   &kp LSHFT  &kp DEL        &kp LGUI   &kp ENTER  &kp SPACE  &kp LALT  
@@ -39,8 +39,8 @@
         //│ A        │ S        │ D        │ F        │ G        │ ALT      │   │ NUM      │ H        │ J        │ K        │ L        │ ; :      │
             &kp A      &kp S      &kp D      &kp F      &kp G      &to 1          &to 2      &kp H      &kp J      &kp K      &kp L      &kp SEMI 
         //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ Z        │ X        │ C        │ V        │ B        │ DEF      │   │ FUN      │ N        │ M        │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B      &to 0          &to 3      &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH 
+        //│ Z (Shft)   │ X (Ctrl)  │ C (Win)  │ V (Alt)  │ B        │ DEF      │   │ FUN      │ N        │ M (Alt)  │ ,< (Win)     │ .> (Ctrl)   │ /? (Shft)    │
+            &mt LSHFT Z &mt LCTRL X &mt LGUI C &mt LALT V  &kp B      &to 0          &to 3      &kp N     &mt RALT M &mt RGUI COMMA &mt RCTRL DOT &mt RSHFT FSLH 
         //╰──────────┴──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴──────────╯
         //                      │ CTR      │ BACKSPACE│ SHIFT    │ DEL      │   │ SUPER    │ ENTER    │ SPACE    │ ALT      │
                                   &kp LCTRL  &kp BSPC   &kp LSHFT  &kp DEL        &kp LGUI   &kp ENTER  &kp SPACE  &kp LALT  
