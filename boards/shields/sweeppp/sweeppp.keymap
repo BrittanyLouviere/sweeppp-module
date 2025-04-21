@@ -13,8 +13,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>; // Accept two parameters: hold key, tap key
             bindings = <
-                &double_key $1 // Hold: Double key macro with first parameter
-                &kp $2         // Tap: Single key with second parameter
+                &double_key 0 $1 // Hold: Double key macro with first parameter
+                &kp $2           // Tap: Single key with second parameter
             >;
             tapping-term-ms = <200>;
         };
