@@ -10,7 +10,7 @@
     macros { 
         // Macro for tap (single key) and hold (double key) 
         dble_macro: dble_macro { 
-            compatible = "zmk,behavior-macro"; 
+            compatible = "zmk,behavior-macro-two-param"; 
             #binding-cells = <2>; // Two parameters: tap_key and hold_key 
             bindings
                 = <&macro_tap &kp $1> // Tap: Send the first keycode (e.g., A)
