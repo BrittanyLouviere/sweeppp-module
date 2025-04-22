@@ -7,27 +7,18 @@
 };
 
 / {
-    behaviors {
-        // Wrapper behavior to invoke double_key macro with parameter
-        dble_key: double_key_behavior {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            bindings = <
-                ¯o_tap &kp $1
-                ¯o_tap &kp $1
-            >;
-        };
-
-        // Custom hold-tap behavior for parameterized tap and double key hold
-        ht_mod_double_key: ht_mod_double_key_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>; // Two parameters: hold key, tap key
-            bindings = <
-                &double_key_behavior $1 // Hold: Double key behavior with first parameter
-                &kp $2                 // Tap: Single key with second parameter
-            >;
-            tapping-term-ms = <200>;
-        };
+    macros { 
+        // Define a reusable macro for tap (single key) and hold (double key) tap_hold_double: 
+        dble_macro { 
+            compatible = "zmk,behavior-macro"; 
+            #binding-cells = <2>; 
+            // Two parameters: tap_key and hold_key 
+            bindings = < 
+                &macro_tap &kp $1 // Tap: Send the first keycode (e.g., A) 
+                &macro_press &kp $2 &kp $2 // Hold: Send the second keycode (e.g., B)
+                &macro_release &none // No action on release 
+            >; 
+        }; 
     };
     keymap {
         compatible = "zmk,keymap";
@@ -36,7 +27,7 @@
             bindings = <
         //╭────────────────────┬─────────────────┬─────────────┬───────────┬──────────╮                         ╭──────────┬───────────┬───────────┬────────────┬────────────╮
         //│ ESC                │ `~              │ TAB         │ (         │ /?       │                         │ [{       │ }]        │ \|        │ -_         │ =+         │
-            &dble_key LSHFT ESC  &kp GRAVE         &lt 3 TAB     &lt 2 LPAR  &kp FSLH                             &kp LBKT   &lt 2 RBKT  &lt 3 BSLH  &kp MINUS    &kp EQUAL
+            &dble_macro ESC LSHFT  &kp GRAVE         &lt 3 TAB     &lt 2 LPAR  &kp FSLH                             &kp LBKT   &lt 2 RBKT  &lt 3 BSLH  &kp MINUS    &kp EQUAL
         //├────────────────────┼─────────────────┼─────────────┼───────────┼──────────┤                         ├──────────┼───────────┼───────────┼────────────┼────────────┤
         //│ '"                 │ ,<              │ .> (Fun)    │ P (Num)   │ Y        │                         │ F        │ G (Num)   │ C (Fun)   │ R          │ L          │
             &mt LSHFT SQT        &mt LCTRL COMMA   &mt LGUI DOT  &mt LALT P  &kp Y                                &kp F      &mt RALT G  &mt RGUI C  &mt RCTRL R  &mt RSHFT L
@@ -57,7 +48,7 @@
             bindings = <
         //╭────────────────────┬────────────┬───────────┬───────────┬──────────╮                         ╭──────────┬───────────┬──────────────┬─────────────┬──────────────╮
         //│ ESC                │ `~         │ TAB       │ (         │ '"       │                         │ [{       │ }]        │ \|           │ -_          │ =+           │
-            &dble_key LSHFT ESC  &kp GRAVE    &lt 3 TAB   &lt 2 LPAR  &kp SQT                              &kp LBKT   &lt 2 RBKT  &lt 3 BSLH     &kp MINUS     &kp EQUAL    
+            &dble_macro LSHFT ESC  &kp GRAVE    &lt 3 TAB   &lt 2 LPAR  &kp SQT                              &kp LBKT   &lt 2 RBKT  &lt 3 BSLH     &kp MINUS     &kp EQUAL    
         //├────────────────────┼────────────┼───────────┼───────────┼──────────┤                         ├──────────┼───────────┼──────────────┼─────────────┼──────────────┤
         //│ Q                  │ W          │ E (Fun)   │ R (Num)   │ T        │                         │ Y        │ U (Num)   │ I (Fun)      │ O           │ P            │
             &mt LSHFT Q          &mt LCTRL W  &mt LGUI E  &mt LALT R  &kp T                                &kp Y      &mt RALT U  &mt RGUI I     &mt RCTRL O   &mt RSHFT P 
