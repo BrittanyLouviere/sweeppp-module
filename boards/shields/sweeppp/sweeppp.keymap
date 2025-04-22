@@ -7,48 +7,60 @@
 };
 
 / {
+    macros { 
+        // Macro for tap (single key) and hold (double key) 
+        dble_macro: dble_macro { 
+            compatible = "zmk,behavior-macro-two-param"; 
+            #binding-cells = <2>; // Two parameters: tap_key and hold_key 
+            bindings
+                = <&macro_tap &kp $1> // Tap: Send the first keycode (e.g., A)
+                , <&macro_press &kp $2 &kp $2> // Hold: Send the second keycode (e.g., B)
+                , <&macro_release &none> // No action on release 
+                ;
+        }; 
+    };
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-        //╭───────────────┬───────────┬──────────┬──────────┬──────────╮                         ╭──────────┬──────────┬──────────┬──────────┬────────────╮
-        //│ ESC           │ `~        │ TAB      │ (        │ /?       │                         │ [{       │ }]       │ \|       │ -_       │ =+         │
-            &kp ESC         &kp GRAVE  &kp TAB    &kp LPAR   &kp FSLH                             &kp LBKT   &kp RBKT   &kp BSLH   &kp MINUS  &kp EQUAL
-        //├───────────────┼───────────┼──────────┼──────────┼──────────┤                         ├──────────┼──────────┼──────────┼──────────┼────────────┤
-        //│ '"            │ ,<        │ .> (Fun) │ P (Num)  │ Y        │                         │ F        │ G (Num)  │ C (Fun)  │ R        │ L          │
-            &kp SQT         &kp COMMA   &lt 3 DOT  &lt 2 P    &kp Y                                &kp F      &lt 2  G   &lt 3 C    &kp R      &kp L
-        //├───────────────┼───────────┼──────────┼──────────┼──────────┼──────────╮   ╭──────────┼──────────┼──────────┼──────────┼──────────┼────────────┤
-        //│ A             │ O         │ E        │ U        │ I        │ ALT      │   │ NUM      │ D        │ H        │ T        │ N        │ S          │
-            &kp A           &kp O      &kp E      &kp U      &kp I      &to 1          &to 2      &kp D      &kp H      &kp T      &kp N      &kp S
-        //├───────────────┼───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼────────────┤
-        //│ ;: (Shft)     │ Q (Ctrl)  │ J (Win)  │ K (Alt)  │ X        │ DEF      │   │ FUN      │ B        │ M (Alt)  │ W (Win)  │ V (Ctrl) │ Z (Shft)   │
-            &mt LSHFT SEMI &mt LCTRL Q &mt LGUI J &mt LALT K &kp X      &to 0          &to 3      &kp B      &mt RALT M &mt RGUI W &mt RCTRL V &mt RSHFT Z
-        //╰───────────────┴───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┴────────────╯
-        //                            │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE    │ ENTER    │
-                                        &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE  &kp ENTER 
-        //                            ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────╯
+        //╭────────────────────┬─────────────────┬─────────────┬───────────┬──────────╮                         ╭──────────┬───────────┬───────────┬────────────┬────────────╮
+        //│ ESC                │ `~              │ TAB         │ (         │ /?       │                         │ [{       │ }]        │ \|        │ -_         │ =+         │
+            &dble_macro (ESC LSHFT)  &kp GRAVE         &lt 3 TAB     &lt 2 LPAR  &kp FSLH                             &kp LBKT   &lt 2 RBKT  &lt 3 BSLH  &kp MINUS    &kp EQUAL
+        //├────────────────────┼─────────────────┼─────────────┼───────────┼──────────┤                         ├──────────┼───────────┼───────────┼────────────┼────────────┤
+        //│ '"                 │ ,<              │ .> (Fun)    │ P (Num)   │ Y        │                         │ F        │ G (Num)   │ C (Fun)   │ R          │ L          │
+            &mt LSHFT SQT        &mt LCTRL COMMA   &mt LGUI DOT  &mt LALT P  &kp Y                                &kp F      &mt RALT G  &mt RGUI C  &mt RCTRL R  &mt RSHFT L
+        //├────────────────────┼─────────────────┼─────────────┼───────────┼──────────┼──────────╮   ╭──────────┼──────────┼───────────┼───────────┼────────────┼────────────┤
+        //│ A                  │ O               │ E           │ U         │ I        │ ALT      │   │ NUM      │ D        │ H         │ T         │ N          │ S          │
+            &kp A                &kp O             &kp E         &kp U       &kp I      &to 1          &to 2      &kp D      &kp H       &kp T       &kp N        &kp S
+        //├────────────────────┼─────────────────┼─────────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼───────────┼───────────┼────────────┼────────────┤
+        //│ ;: (Shft)          │ Q (Ctrl)        │ J (Win)     │ K (Alt)   │ X        │ DEF      │   │ FUN      │ B        │ M (Alt)   │ W (Win)   │ V (Ctrl)   │ Z (Shft)   │
+            &kp SEMI             &kp Q             &kp J         &kp K       &kp X      &to 0          &to 3      &kp B      &kp M       &kp W       &kp V        &kp Z
+        //╰────────────────────┴─────────────────┼─────────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼───────────┼───────────┼────────────┴────────────╯
+        //                                       │ ENTER       │ SPACE     │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE     │ ENTER     │
+                                                   &kp ENTER     &kp SPACE   &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE   &kp ENTER 
+        //                                       ╰─────────────┴───────────┴──────────┴──────────╯   ╰──────────┴──────────┴───────────┴───────────╯
             >;
         };
 
         alt_layer {
             bindings = <
-        //╭────────────┬───────────┬──────────┬──────────┬──────────╮                         ╭──────────┬──────────┬──────────────┬─────────────┬──────────────╮
-        //│ ESC        │ `~        │ TAB      │ CAPS     │ '"       │                         │ [{       │ }]       │ \|           │ -_          │ =+           │
-            &kp ESC      &kp GRAVE  &kp TAB    &caps_word &kp SQT                              &kp LBKT   &kp RBKT   &kp BSLH       &kp MINUS     &kp EQUAL
-        //├────────────┼───────────┼──────────┼──────────┼──────────┤                         ├──────────┼──────────┼──────────────┼─────────────┼──────────────┤
-        //│ Q          │ W         │ E (Fun)  │ R (Num)  │ T        │                         │ Y        │ U (Num)  │ I (Fun)      │ O           │ P            │
-            &kp Q        &kp W       &lt 3 E    &lt 2 R    &kp T                                &kp Y      &lt 2 U    &lt 3 I        &kp O         &kp P    
-        //├────────────┼───────────┼──────────┼──────────┼──────────┼──────────╮   ╭──────────┼──────────┼──────────┼──────────────┼─────────────┼──────────────┤
-        //│ A          │ S         │ D        │ F        │ G        │ ALT      │   │ NUM      │ H        │ J        │ K            │ L           │ ;:           │
-            &kp A        &kp S       &kp D      &kp F      &kp G      &to 1          &to 2      &kp H      &kp J      &kp K          &kp L         &kp SEMI 
-        //├────────────┼───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────────┼─────────────┼──────────────┤
-        //│ Z (Shft)   │ X (Ctrl)  │ C (Win)  │ V (Alt)  │ B        │ DEF      │   │ FUN      │ N        │ M (Alt)  │ ,< (Win)     │ .> (Ctrl)   │ /? (Shft)    │
-            &mt LSHFT Z &mt LCTRL X &mt LGUI C &mt LALT V  &kp B      &to 0          &to 3      &kp N     &mt RALT M &mt RGUI COMMA &mt RCTRL DOT &mt RSHFT FSLH 
-        //╰────────────┴───────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────────┼─────────────┴──────────────╯
-        //                         │ ENTER    │ SPACE    │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE    │ ENTER        │
-                                     &kp ENTER  &kp SPACE  &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE  &kp ENTER 
-        //                         ╰──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────────╯
+        //╭────────────────────┬────────────┬───────────┬───────────┬──────────╮                         ╭──────────┬───────────┬──────────────┬─────────────┬──────────────╮
+        //│ ESC                │ `~         │ TAB       │ (         │ '"       │                         │ [{       │ }]        │ \|           │ -_          │ =+           │
+            &dble_macro LSHFT ESC  &kp GRAVE    &lt 3 TAB   &lt 2 LPAR  &kp SQT                              &kp LBKT   &lt 2 RBKT  &lt 3 BSLH     &kp MINUS     &kp EQUAL    
+        //├────────────────────┼────────────┼───────────┼───────────┼──────────┤                         ├──────────┼───────────┼──────────────┼─────────────┼──────────────┤
+        //│ Q                  │ W          │ E (Fun)   │ R (Num)   │ T        │                         │ Y        │ U (Num)   │ I (Fun)      │ O           │ P            │
+            &mt LSHFT Q          &mt LCTRL W  &mt LGUI E  &mt LALT R  &kp T                                &kp Y      &mt RALT U  &mt RGUI I     &mt RCTRL O   &mt RSHFT P 
+        //├────────────────────┼────────────┼───────────┼───────────┼──────────┼──────────╮   ╭──────────┼──────────┼───────────┼──────────────┼─────────────┼──────────────┤
+        //│ A                  │ S          │ D         │ F         │ G        │ ALT      │   │ NUM      │ H        │ J         │ K            │ L           │ ;:           │
+            &kp A                &kp S        &kp D       &kp F       &kp G      &to 1          &to 2      &kp H      &kp J       &kp K          &kp L         &kp SEMI 
+        //├────────────────────┼────────────┼───────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼───────────┼──────────────┼─────────────┼──────────────┤
+        //│ Z (Shft)           │ X (Ctrl)   │ C (Win)   │ V (Alt)   │ B        │ DEF      │   │ FUN      │ N        │ M (Alt)   │ ,< (Win)     │ .> (Ctrl)   │ /? (Shft)    │
+            &kp Z                &kp X        &kp C       &kp V       &kp B      &to 0          &to 3      &kp N      &kp M       &kp COMMA      &kp DOT       &kp FSLH 
+        //╰────────────────────┴────────────┼───────────┼───────────┼──────────┼──────────┤   ├──────────┼──────────┼───────────┼──────────────┼─────────────┴──────────────╯
+        //                                  │ ENTER     │ SPACE     │ BACKSPACE│ DEL      │   │ DEL      │ BACKSPACE│ SPACE     │ ENTER        │
+                                              &kp ENTER   &kp SPACE   &kp BSPC   &kp DEL        &kp DEL    &kp BSPC   &kp SPACE   &kp ENTER 
+        //                                  ╰───────────┴───────────┴──────────┴──────────╯   ╰──────────┴──────────┴───────────┴──────────────╯
             >;
         };
 
