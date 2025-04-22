@@ -8,27 +8,25 @@
 
 / {
     behaviors {
-        // Custom hold-tap behavior for tap and double key hold
-        dble_key: ht_mod_double_key_behavior {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>; // Accept two parameters: hold key, tap key
+        // Wrapper behavior to invoke double_key macro with parameter
+        dble_key: double_key_behavior {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
             bindings = <
-                &double_key 0 $1 // Hold: Double key macro with first parameter
-                &kp $2           // Tap: Single key with second parameter
+                ¯o_tap &kp $1
+                ¯o_tap &kp $1
+            >;
+        };
+
+        // Custom hold-tap behavior for parameterized tap and double key hold
+        ht_mod_double_key: ht_mod_double_key_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; // Two parameters: hold key, tap key
+            bindings = <
+                &double_key_behavior $1 // Hold: Double key behavior with first parameter
+                &kp $2                 // Tap: Single key with second parameter
             >;
             tapping-term-ms = <200>;
-        };
-    };
-
-    macros {
-        // Macro for double key press
-        double_key: double_key_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>; // Accept one parameter for double key
-            bindings = <
-                ¯o_tap &kp $1
-                ¯o_tap &kp $1
-            >;
         };
     };
     keymap {
