@@ -7,14 +7,6 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-    }
-
     keymap {
         compatible = "zmk,keymap";
 
