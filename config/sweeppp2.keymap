@@ -71,12 +71,12 @@
         c114 { bindings = <&kp HOME>; key-positions = <0 1 2 39>; };
         c115 { bindings = <&kp PG_DN>; key-positions = <0 1 2 40>; };
         c116 { bindings = <&kp END>; key-positions = <0 1 2 41>; };
-        c118 { bindings = <$bt BT_SEL 0>; key-positions = <1 2 3 6>; };
-        c119 { bindings = <$bt BT_SEL 1>; key-positions = <1 2 3 7>; };
-        c120 { bindings = <$bt BT_SEL 2>; key-positions = <1 2 3 8>; };
-        c121 { bindings = <$bt BT_SEL 3>; key-positions = <1 2 3 9>; };
-        c122 { bindings = <$bt BT_SEL 4>; key-positions = <0 1 2 6>; };
-        c123 { bindings = <$bt BT_CLR>; key-positions = <0 1 2 9>; };
+        c118 { bindings = <&bt BT_SEL 0>; key-positions = <1 2 3 6>; };
+        c119 { bindings = <&bt BT_SEL 1>; key-positions = <1 2 3 7>; };
+        c120 { bindings = <&bt BT_SEL 2>; key-positions = <1 2 3 8>; };
+        c121 { bindings = <&bt BT_SEL 3>; key-positions = <1 2 3 9>; };
+        c122 { bindings = <&bt BT_SEL 4>; key-positions = <0 1 2 6>; };
+        c123 { bindings = <&bt BT_CLR>; key-positions = <0 1 2 9>; };
     };
 
     keymap {
