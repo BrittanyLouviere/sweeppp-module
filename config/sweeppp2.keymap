@@ -10,7 +10,16 @@
     combos {
         compatible = "zmk,combos";
 
-        
+        c1 { bindings = <&kp A>; key-positions = <0>; };
+        c2 { bindings = <&kp O>; key-positions = <1>; };
+        c3 { bindings = <&kp E>; key-positions = <2>; };
+        c4 { bindings = <&kp U>; key-positions = <2 3>; };
+        c5 { bindings = <&kp I>; key-positions = <3>; };
+        c6 { bindings = <&kp D>; key-positions = <6 7>; };
+        c7 { bindings = <&kp H>; key-positions = <6>; };
+        c8 { bindings = <&kp T>; key-positions = <7>; };
+        c9 { bindings = <&kp N>; key-positions = <8>; };
+        c10 { bindings = <&kp S>; key-positions = <9>; };
         c11 { bindings = <&kp SQT>; key-positions = <0 8>; };
         c12 { bindings = <&kp COMMA>; key-positions = <0 1>; };
         c13 { bindings = <&kp DOT>; key-positions = <1 2>; };
@@ -62,7 +71,14 @@
         c59 { bindings = <&kp F10>; key-positions = <2 8 9>; };
         c60 { bindings = <&kp F11>; key-positions = <1 8 9>; };
         c61 { bindings = <&kp F12>; key-positions = <0 8 9>; };
-        
+        c101 { bindings = <&kp DEL>; key-positions = <23>; };
+        c102 { bindings = <&kp BSPC>; key-positions = <34>; };
+        c103 { bindings = <&kp SPACE>; key-positions = <35>; };
+        c104 { bindings = <&kp ENTER>; key-positions = <36>; };
+        c105 { bindings = <&kp LCTRL>; key-positions = <28>; };
+        c106 { bindings = <&kp LALT>; key-positions = <39>; };
+        c107 { bindings = <&kp LSHFT>; key-positions = <40>; };
+        c108 { bindings = <&kp LMETA>; key-positions = <41>; };
         c109 { bindings = <&kp UP>; key-positions = <6 7 8 23>; };
         c110 { bindings = <&kp LEFT>; key-positions = <6 7 8 34>; };
         c111 { bindings = <&kp DOWN>; key-positions = <6 7 8 35>; };
