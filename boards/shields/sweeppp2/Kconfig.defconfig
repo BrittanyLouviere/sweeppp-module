@@ -1,0 +1,16 @@
+if SHIELD_SWEEP2PP_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Sweep2++"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_SWEEP2PP_LEFT || SHIELD_SWEEP2PP_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
