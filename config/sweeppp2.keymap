@@ -10,6 +10,7 @@
     combos {
         compatible = "zmk,combos";
 
+        
         c11 { bindings = <&kp SQT>; key-positions = <0 8>; };
         c12 { bindings = <&kp COMMA>; key-positions = <0 1>; };
         c13 { bindings = <&kp DOT>; key-positions = <1 2>; };
@@ -30,6 +31,52 @@
         c28 { bindings = <&kp W>; key-positions = <1 7>; };
         c29 { bindings = <&kp V>; key-positions = <2 8>; };
         c30 { bindings = <&kp Z>; key-positions = <7 9>; };
+        c31 { bindings = <&kp NUBS>; key-positions = <0 9>; };
+        c32 { bindings = <&kp FSLH>; key-positions = <3 9>; };
+        c33 { bindings = <&kp LBKT>; key-positions = <0 7>; };
+        c34 { bindings = <&kp RBKT>; key-positions = <2 9>; };
+        c35 { bindings = <&kp ESC>; key-positions = <1 9>; };
+        c36 { bindings = <&kp TAB>; key-positions = <0 2>; };
+        c37 { bindings = <&kp GRAVE>; key-positions = <1 2 3>; };
+        c38 { bindings = <&kp N1>; key-positions = <2 3 6>; };
+        c39 { bindings = <&kp N2>; key-positions = <2 3 7>; };
+        c40 { bindings = <&kp N3>; key-positions = <2 3 8>; };
+        c41 { bindings = <&kp N4>; key-positions = <2 3 9>; };
+        c42 { bindings = <&kp N5>; key-positions = <1 2 6>; };
+        c43 { bindings = <&kp N6>; key-positions = <1 2 7>; };
+        c44 { bindings = <&kp N7>; key-positions = <1 2 8>; };
+        c45 { bindings = <&kp N8>; key-positions = <1 2 9>; };
+        c46 { bindings = <&kp N9>; key-positions = <0 1 6>; };
+        c47 { bindings = <&kp N0>; key-positions = <0 1 7>; };
+        c48 { bindings = <&kp EQUAL>; key-positions = <0 1 8>; };
+        c49 { bindings = <&kp MINUS>; key-positions = <0 1 9>; };
+        c50 { bindings = <&kp F1>; key-positions = <3 6 7>; };
+        c51 { bindings = <&kp F2>; key-positions = <2 6 7>; };
+        c52 { bindings = <&kp F3>; key-positions = <1 6 7>; };
+        c53 { bindings = <&kp F4>; key-positions = <0 6 7>; };
+        c54 { bindings = <&kp F5>; key-positions = <3 7 8>; };
+        c55 { bindings = <&kp F6>; key-positions = <2 7 8>; };
+        c56 { bindings = <&kp F7>; key-positions = <1 7 8>; };
+        c57 { bindings = <&kp F8>; key-positions = <0 7 8>; };
+        c58 { bindings = <&kp F9>; key-positions = <3 8 9>; };
+        c59 { bindings = <&kp F10>; key-positions = <2 8 9>; };
+        c60 { bindings = <&kp F11>; key-positions = <1 8 9>; };
+        c61 { bindings = <&kp F12>; key-positions = <0 8 9>; };
+        
+        c109 { bindings = <&kp UP>; key-positions = <6 7 8 23>; };
+        c110 { bindings = <&kp LEFT>; key-positions = <6 7 8 34>; };
+        c111 { bindings = <&kp DOWN>; key-positions = <6 7 8 35>; };
+        c112 { bindings = <&kp RIGHT>; key-positions = <6 7 8 36>; };
+        c113 { bindings = <&kp PG_UP>; key-positions = <0 1 2 28>; };
+        c114 { bindings = <&kp HOME>; key-positions = <0 1 2 39>; };
+        c115 { bindings = <&kp PG_DN>; key-positions = <0 1 2 40>; };
+        c116 { bindings = <&kp END>; key-positions = <0 1 2 41>; };
+        c118 { bindings = <$bt BT_SEL 0>; key-positions = <1 2 3 6>; };
+        c119 { bindings = <$bt BT_SEL 1>; key-positions = <1 2 3 7>; };
+        c120 { bindings = <$bt BT_SEL 2>; key-positions = <1 2 3 8>; };
+        c121 { bindings = <$bt BT_SEL 3>; key-positions = <1 2 3 9>; };
+        c122 { bindings = <$bt BT_SEL 4>; key-positions = <0 1 2 6>; };
+        c123 { bindings = <$bt BT_CLR>; key-positions = <0 1 2 9>; };
     };
 
     keymap {
